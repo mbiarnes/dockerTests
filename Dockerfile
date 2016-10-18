@@ -29,7 +29,7 @@ CMD git config user.name "kiereleaseuser"
 CMD git config user.email kiereleaseuser@gmail.com
 
 ### publish drools-website ###
-RUN git clone https://github.com/droolsjbpm/drools-website.git
+RUN git clone https://github.com/mbiarnes/drools-website.git
 CMD cd drools-website
 CMD rake setup
 #CMD rake clean build publish
