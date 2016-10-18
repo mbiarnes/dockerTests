@@ -8,10 +8,8 @@ FROM fedora:24
 ####### MAINTAINER ############
 MAINTAINER "Michael Biarnes Kiefer" "mbiarnes@redhat.com"
 
-#### switch to user root #####
-USER root
 
-### install rubey, awestruct and rake ###
+### install ruby, awestruct and rake ###
 RUN dnf install -y ruby
 RUN dnf install -y rubygem-rake
 RUN dnf install -y rubygem-bundler
@@ -20,17 +18,21 @@ RUN dnf install -y rpm-build
 RUN dnf groupinstall -y development-tools
 RUN dnf install -y libxslt-devel
 RUN dnf install -y gcc-c++
-CMD gem install awestruct bundler
-CMD gem install rake
+RUN dnf clean all
 
-### install git ###
-RUN dnf install -y git-all
-CMD git config user.name "kiereleaseuser"
-CMD git config user.email kiereleaseuser@gmail.com
+RUN useradd -m jenkins -u 1000
 
-### publish drools-website ###
-RUN git clone https://github.com/mbiarnes/drools-website.git
-CMD cd drools-website
-CMD rake setup
-#CMD rake clean build publish
-CMD rake clean build
+USER jenkins
+
+WORKDIR /home/jenkins
+
+ENV HOME /home/jenkins
+ENV AWESTRUCT_VERSION 0.5.7
+ENV LC_ALL en_US.UTF-8
+ENV LANG en_US.UTF-8
+
+RUN bash -l -c "rvm cleanup all"
+RUN bash -l -c "gem install awestruct -v $AWESTRUCT_VERSION --no-rdoc --no-ri" 
+RUN bash -l -c "gem install bundler"
+RUN bash -l -c "gem install rake"
+
