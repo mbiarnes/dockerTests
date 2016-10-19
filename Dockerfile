@@ -30,8 +30,6 @@ WORKDIR /home/jenkins
 
 ENV HOME /home/jenkins
 ENV AWESTRUCT_VERSION 0.5.7
-ENV LC_ALL en_US.UTF-8
-ENV LANG en_US.UTF-8
 
 RUN bash -l -c "rvm cleanup all"
 RUN bash -l -c "gem install awestruct -v $AWESTRUCT_VERSION --no-rdoc --no-ri" 
