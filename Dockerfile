@@ -8,6 +8,8 @@ FROM fedora:24
 ####### MAINTAINER ############
 MAINTAINER "Michael Biarnes Kiefer" "mbiarnes@redhat.com"
 
+### swith to root user ###
+USER root
 
 ### install ruby, awestruct and rake ###
 RUN dnf install -y ruby
