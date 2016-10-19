@@ -31,7 +31,6 @@ WORKDIR /home/jenkins
 ENV HOME /home/jenkins
 ENV AWESTRUCT_VERSION 0.5.7
 
-RUN bash -l -c "rvm cleanup all"
 RUN bash -l -c "gem install awestruct -v $AWESTRUCT_VERSION --no-rdoc --no-ri" 
 RUN bash -l -c "gem install bundler"
 RUN bash -l -c "gem install rake"
