@@ -22,8 +22,8 @@ RUN dnf groupinstall -y development-tools
 #RUN dnf install -y gcc-c++
 #RUN dnf clean all
 
-#RUN useradd -m jenkins -u 1001
-RUN useradd --system -u 1001 -g 1001 --home-dir /home/jenkins --shell /bin/bash -m jenkins
+RUN useradd -m jenkins -u 1001 --shell /bin/bash
+#RUN useradd --system -u 1001 -g 1001 --home-dir /home/jenkins --shell /bin/bash -m jenkins
 
 USER jenkins
 
