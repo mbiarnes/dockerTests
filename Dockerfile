@@ -12,15 +12,15 @@ MAINTAINER "Michael Biarnes Kiefer <mbiarnes@redhat.com>"
 USER root
 
 ### install ruby, awestruct and rake ###
-RUN dnf install -y ruby
-RUN dnf install -y rubygem-rake
-RUN dnf install -y rubygem-bundler
-RUN dnf install -y ruby-devel
-RUN dnf install -y rpm-build
+#RUN dnf install -y ruby
+#RUN dnf install -y rubygem-rake
+#RUN dnf install -y rubygem-bundler
+#RUN dnf install -y ruby-devel
+#RUN dnf install -y rpm-build
 RUN dnf groupinstall -y development-tools
-RUN dnf install -y libxslt-devel
-RUN dnf install -y gcc-c++
-RUN dnf clean all
+#RUN dnf install -y libxslt-devel
+#RUN dnf install -y gcc-c++
+#RUN dnf clean all
 
 #RUN useradd -m jenkins -u 1001
 RUN useradd --system -u 1001 -g 1001 --home-dir /home/jenkins --shell /bin/bash -m jenkins
