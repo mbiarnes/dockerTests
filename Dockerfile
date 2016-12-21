@@ -23,7 +23,7 @@ RUN dnf install -y gcc-c++
 RUN dnf clean all
 
 #RUN useradd -m jenkins -u 1001
-RUN RUN (adduser --system --uid=1000 --gid=1000 --home /home/jenkins --shell /bin/bash jenkins)
+RUN RUN (adduser --system --uid=1001 --gid=1001 --home /home/jenkins --shell /bin/bash jenkins)
 
 USER jenkins
 
