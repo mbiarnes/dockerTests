@@ -22,7 +22,8 @@ RUN dnf install -y libxslt-devel
 RUN dnf install -y gcc-c++
 RUN dnf clean all
 
-RUN useradd -m jenkins -u 1001
+#RUN useradd -m jenkins -u 1001
+RUN RUN (adduser --system --uid=1000 --gid=1000 --home /home/jenkins --shell /bin/bash jenkins)
 
 USER jenkins
 
