@@ -6,7 +6,7 @@
 FROM fedora:24
 
 ####### MAINTAINER ############
-MAINTAINER "Michael Biarnes Kiefer" "mbiarnes@redhat.com"
+MAINTAINER "Michael Biarnes Kiefer <mbiarnes@redhat.com>"
 
 ### swith to root user ###
 USER root
@@ -37,3 +37,6 @@ RUN bash -l -c "gem install awestruct -v $AWESTRUCT_VERSION --no-rdoc --no-ri"
 RUN bash -l -c "gem install bundler"
 RUN bash -l -c "gem install rake"
 
+EXPOSE 4242
+
+CMD ["bash","--login"]
