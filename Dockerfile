@@ -17,7 +17,7 @@ RUN dnf install -y rubygem-rake
 RUN dnf install -y rubygem-bundler
 RUN dnf install -y ruby-devel
 RUN dnf install -y rpm-build
-UN dnf groupinstall -y development-tools
+RUN dnf groupinstall -y development-tools
 RUN dnf install -y libxslt-devel
 RUN dnf install -y gcc-c++
 RUN dnf clean all
