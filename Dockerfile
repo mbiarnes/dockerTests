@@ -3,7 +3,7 @@
 ############################################################################
 
 ####### BASE #################
-FROM fedora:24
+FROM fedora:23
 
 ####### MAINTAINER ############
 MAINTAINER "Michael Biarnes Kiefer <mbiarnes@redhat.com>"
@@ -23,7 +23,6 @@ RUN dnf install -y gcc-c++
 RUN dnf clean all
 
 RUN useradd -m jenkins -u 1001 --shell /bin/bash
-#RUN useradd --system -u 1001 -g 1001 --home-dir /home/jenkins --shell /bin/bash -m jenkins
 
 USER jenkins
 
