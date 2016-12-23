@@ -39,4 +39,4 @@ RUN bash -l -c "gem install rake"
 
 EXPOSE 4242
 
-CMD ["bash","--login"]
+CMD ["bash","--login", "rake"]
