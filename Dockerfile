@@ -38,7 +38,7 @@ RUN gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A17031138
 
 RUN bash -l -c "gem install awestruct -v $AWESTRUCT_VERSION --no-rdoc --no-ri" 
 RUN bash -l -c "gem install bundler"
-#RUN bash -l -c "gem install rake"
+RUN bash -l -c "gem install rake"
 
 EXPOSE 4242
 
