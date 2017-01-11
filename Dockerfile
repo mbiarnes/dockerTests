@@ -13,14 +13,15 @@ USER root
 
 ### install ruby and rake ###
 RUN dnf install -y ruby
-RUN dnf install -y gcc ruby-devel rubygems
+RUN dnf install -y gcc
 RUN dnf install -y gcc-c++
 RUN dnf install -y libxml2-devel	
 RUN dnf install -y libxslt-devel
+RUN dnf install -y rubygems
 RUN dnf install -y rubygem-nokogiri
 RUN dnf install -y rubygem-rake
 RUN dnf install -y rubygem-bundler
-## RUN dnf install -y ruby-devel
+RUN dnf install -y ruby-devel
 RUN dnf install -y rpm-build
 RUN dnf groupinstall -y development-tools
 RUN dnf clean all
