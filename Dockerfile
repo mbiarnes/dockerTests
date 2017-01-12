@@ -13,17 +13,18 @@ USER root
 
 ### install ruby and rake ###
 RUN dnf install -y ruby
-RUN dnf install -y gcc
-RUN dnf install -y gcc-c++
-RUN dnf install -y libxml2-devel	
+RUN dnf groupinstall -y development-tools
+RUN dnf install -y rake
+RUN dnf install -y ruby-devel
 RUN dnf install -y libxslt-devel
+RUN dnf install -y gcc-c++
+RUN dnf install -y gcc
+RUN dnf install -y libxml2-devel	
 RUN dnf install -y rubygems
 RUN dnf install -y rubygem-nokogiri
 RUN dnf install -y rubygem-rake
 RUN dnf install -y rubygem-bundler
-RUN dnf install -y ruby-devel
 RUN dnf install -y rpm-build
-RUN dnf groupinstall -y development-tools
 RUN dnf clean all
 
 RUN useradd -m jenkins -u 1001 --shell /bin/bash
@@ -39,7 +40,7 @@ RUN gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A17031138
 
 RUN bash -l -c "gem install awestruct -v $AWESTRUCT_VERSION --no-rdoc --no-ri" 
 RUN bash -l -c "gem install bundler"
-RUN bash -l -c "gem install rake"
+#RUN bash -l -c "gem install rake"
 
 EXPOSE 4242
 
