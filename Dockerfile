@@ -34,8 +34,8 @@ ENV AWESTRUCT_VERSION 0.5.7
 
 RUN gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 
-RUN bash -l -c "gem install awestruct -v $AWESTRUCT_VERSION --no-rdoc --no-ri" 
-RUN bash -l -c "gem install bundler"
+RUN bash -l -c "gem install awestruct -v $AWESTRUCT_VERSION -N bundler" 
+#RUN bash -l -c "gem install bundler"
 #RUN bash -l -c "gem install rake"
 
 EXPOSE 4242
