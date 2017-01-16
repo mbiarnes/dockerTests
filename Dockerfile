@@ -21,6 +21,7 @@ RUN dnf install -y gcc-c++
 RUN dnf install -y rubygem-nokogiri
 RUN dnf install -y rubygem-bundler
 RUN dnf install -y rpm-build
+RUN dnf install -y net-tools
 RUN dnf clean all
 
 RUN bash -l -c "gem install bundler awestruct:0.5.7 -N"
