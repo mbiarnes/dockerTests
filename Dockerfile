@@ -31,15 +31,12 @@ RUN useradd -m jenkins -u 1001 --shell /bin/bash
 
 USER jenkins
 
-ADD id_rsa.kie-ci.pub .ssh
-
 WORKDIR /home/jenkins
 
 ENV HOME /home/jenkins
 ENV LANG en_US.UTF-8
 
-RUN gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-
+# RUN gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 
 EXPOSE 4242
 
